@@ -1,4 +1,4 @@
-package main.java.org.acme.entities.apiresponse;
+package org.acme.entities.apiresponse;
 
 import java.util.Date;
 
