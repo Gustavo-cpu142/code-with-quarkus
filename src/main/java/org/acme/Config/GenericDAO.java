@@ -1,4 +1,4 @@
-package main.java.org.acme.Config;
+package org.acme.Config;
 
 import java.util.List;
 
