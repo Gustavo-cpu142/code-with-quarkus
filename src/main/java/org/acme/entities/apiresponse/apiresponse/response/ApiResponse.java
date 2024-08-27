@@ -1,4 +1,4 @@
-package py.edu.ucom.model.response;
+package org.acme.response;
 
 public class ApiResponse<T> {
     private String message;
