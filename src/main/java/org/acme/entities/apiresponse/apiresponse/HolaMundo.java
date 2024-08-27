@@ -1,18 +1,18 @@
-package py.edu.ucom.entities;
+package org.acme.entities;
 
 import java.util.Date;
 
 public class HolaMundo {
-    public String nobmre;
+    public String nombre; 
     public Integer edad;
     public Date fechaNacimiento;
 
-    public String getNobmre() {
-        return nobmre;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNobmre(String nobmre) {
-        this.nobmre = nobmre;
+    public void setNombre(String nombre) { 
+        this.nombre = nombre;
     }
 
     public Integer getEdad() {
@@ -33,7 +33,7 @@ public class HolaMundo {
 
     @Override
     public String toString() {
-        return "HolaMundo [nobmre=" + nobmre + ", edad=" + edad + ", fechaNacimiento=" + fechaNacimiento + "]";
+        return "HolaMundo [nombre=" + nombre + ", edad=" + edad + ", fechaNacimiento=" + fechaNacimiento + "]";
     }
 
 }
