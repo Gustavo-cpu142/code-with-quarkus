@@ -1,4 +1,6 @@
-package main.java.org.acme.service.api;
+package org.acme.service.api;
+
+import jakarta.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
 public class ApiResponseService {
@@ -6,4 +8,3 @@ public class ApiResponseService {
         return "retorna desde el servicio";
     }
 }
-

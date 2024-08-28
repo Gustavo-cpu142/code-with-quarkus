@@ -1,4 +1,4 @@
-package main.java.org.acme.repository;
+package org.acme.repository;
 
 import java.io.File;
 import java.io.IOException;
@@ -7,11 +7,12 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import org.acme.entities.apiresponse.Gastos;
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import jakarta.enterprise.context.ApplicationScoped;
-import main.java.py.edu.ucom.entities.apiresponse.Gastos;
 
 @ApplicationScoped
 public class ApiResponseRepository {

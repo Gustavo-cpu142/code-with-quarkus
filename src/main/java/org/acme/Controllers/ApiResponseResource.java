@@ -1,10 +1,10 @@
-package org.acme.Controllers;
+package org.acme.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.acme.entities.apiresponse.Gastos;
-import org.acme.model.response.ApiResponse;
+import org.acme.entities.response.ApiResponse;
 import org.acme.service.api.GenericDaoServiceWithJason;
 
 import jakarta.ws.rs.Consumes;
@@ -15,17 +15,15 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
-
 @Path("/api-examples")
 public class ApiResponseResource {
 
-    
     private GenericDaoServiceWithJason serviceConConstructor;
 
     public ApiResponseResource(GenericDaoServiceWithJason instanciaService) {
         this.serviceConConstructor = instanciaService;
     }
-    
+
     @GET
     @Path("gastos/json")
     @Consumes(MediaType.APPLICATION_JSON)
