@@ -1,4 +1,4 @@
-package org.acme.controllers;
+package org.acme.Controllers;
 
 import java.util.ArrayList;
 import java.util.List;
