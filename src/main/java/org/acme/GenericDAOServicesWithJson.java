@@ -1,19 +1,18 @@
-package org.acme.service.api;
+package org.acme.services.api;
 
 import java.util.List;
 
+import jakarta.enterprise.context.ApplicationScoped;
 import org.acme.config.GenericDAO;
 import org.acme.entities.apiresponse.Gastos;
 import org.acme.repository.ApiResponseRepository;
 
-import jakarta.enterprise.context.ApplicationScoped;
-
 @ApplicationScoped
-public class GenericDaoServiceWithJason implements GenericDAO<Gastos, Integer> {
+public class GenericDAOServicesWithJson implements GenericDAO<Gastos, Integer> {
 
     public ApiResponseRepository repository;
 
-    public GenericDaoServiceWithJason(ApiResponseRepository repository) {
+    public GenericDAOServicesWithJson(ApiResponseRepository repository) {
         this.repository = repository;
     }
 

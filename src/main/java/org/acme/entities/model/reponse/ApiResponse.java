@@ -1,4 +1,4 @@
-package org.acme.entities.response;
+package org.acme.model.response;
 
 public class ApiResponse<T> {
     private String message;
@@ -6,8 +6,7 @@ public class ApiResponse<T> {
     private T data;
 
     // Constructor vacío
-    public ApiResponse() {
-    }
+    public ApiResponse() {}
 
     // Constructor con todos los atributos
     public ApiResponse(String message, Integer code, T data) {

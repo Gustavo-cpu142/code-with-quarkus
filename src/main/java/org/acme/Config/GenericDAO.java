@@ -2,7 +2,9 @@ package org.acme.config;
 
 import java.util.List;
 
-public interface GenericDAO<T, I> {
+import java.util.List;
+
+public interface GenericDAO <T, I>{
     public List<T> listar();
 
     public T obtener(I id);

@@ -1,4 +1,4 @@
-package org.acme.service.api;
+package org.acme.services.api;
 
 import jakarta.enterprise.context.ApplicationScoped;
 

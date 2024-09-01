@@ -2,6 +2,7 @@ package org.acme.entities.apiresponse;
 
 import java.util.Date;
 
+
 public class Gastos {
     private Integer id;
     private Date fecha;
