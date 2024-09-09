@@ -24,10 +24,6 @@ public class CategoriaResource {
         this.service = service;
     }
 
-    /**
-     * @param id
-     * @return
-     */
     @GET
     @Path("{id}")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -49,3 +45,90 @@ public class CategoriaResource {
 
         return respuesta;
     }
+
+    @GET
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public ApiResponse<List<Categoria>> listar() {
+        ApiResponse<List<Categoria>> respuesta = new ApiResponse();
+
+        try {
+            respuesta.setCode(Response.Status.OK.getStatusCode());
+            respuesta.setMessage("Se obtuvo exitosamente el listado.");
+            respuesta.setData(service.listar());
+        } catch (Exception e) {
+
+            respuesta.setCode(Response.Status.CONFLICT.getStatusCode());
+            respuesta.setMessage("No se obtuvo el listado.");
+            respuesta.setData(null);
+        }
+
+        return respuesta;
+    }
+
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public ApiResponse<Categoria> agregar(Categoria param) {
+        ApiResponse<Categoria> respuesta = new ApiResponse();
+
+        try {
+            this.service.agregar(param);
+            respuesta.setCode(Response.Status.OK.getStatusCode());
+            respuesta.setMessage("Se agrego exitosamente.");
+            respuesta.setData(param);
+        } catch (Exception e) {
+            e.printStackTrace();
+            respuesta.setCode(Response.Status.CONFLICT.getStatusCode());
+            respuesta.setMessage("No se pudo agregar la entidad.");
+            respuesta.setData(null);
+        }
+
+        return respuesta;
+    }
+
+    @PUT
+    @Path("{id}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public ApiResponse<Categoria> modificar(Categoria param, @PathParam("id") Integer Id) {
+        ApiResponse<Categoria> respuesta = new ApiResponse();
+
+        try {
+            this.service.modificar(param);
+            respuesta.setCode(Response.Status.OK.getStatusCode());
+            respuesta.setMessage("Se agrego exitosamente.");
+            respuesta.setData(param);
+        } catch (Exception e) {
+            e.printStackTrace();
+            respuesta.setCode(Response.Status.CONFLICT.getStatusCode());
+            respuesta.setMessage("No se pudo agregar la entidad.");
+            respuesta.setData(null);
+        }
+
+        return respuesta;
+    }
+
+    @DELETE
+    @Path("{id}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public ApiResponse<Object> eliminar(@PathParam("id") Integer id) {
+        ApiResponse<Object> respuesta = new ApiResponse();
+
+        try {
+            this.service.eliminar(id);
+            respuesta.setCode(Response.Status.OK.getStatusCode());
+            respuesta.setMessage("Se elimino exitosamente.");
+            respuesta.setData(null);
+        } catch (Exception e) {
+            e.printStackTrace();
+            respuesta.setCode(Response.Status.CONFLICT.getStatusCode());
+            respuesta.setMessage("No se pudo eliminar la entidad.");
+            respuesta.setData(null);
+        }
+
+        return respuesta;
+    }
+
+}
